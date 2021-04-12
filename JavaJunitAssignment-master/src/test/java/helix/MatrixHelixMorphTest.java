@@ -78,10 +78,12 @@ public class MatrixHelixMorphTest {
     }
 
     @Test
-    public void test3x5() {
+    public void test4x5() {
         int[][] inMatrix  = { {7,5,1,4,6},{3,2,9,1,8},{8,3,2,4,1},{10,11,15,19,14} };
         int[][] expOutput = { {7,5,1,4,6},{4,1,10,11,3},{2,14,19,15,2},{3,8,8,1,9} };
         assertTrue(testEqual(expOutput, MatrixHelixMorph.helix(inMatrix)));
     }
-
+//1   2   3   4  5   6
+//        7   8   9  10  11  12
+//        13  14  15 16  17  18
 }
