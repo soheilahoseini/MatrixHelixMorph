@@ -14,20 +14,6 @@ public class MatrixHelixMorph {
         int rows = inMatrix.length;
         int cols = inMatrix[0].length;
 
-        if(Math.abs(rows-cols)>1){
-            if(rows>cols){
-                cols++;
-                for(int i=0;i<rows;i++){
-                    inMatrix[cols][i]=0;
-                }
-            }else {
-                rows++;
-                for(int i=0;i<cols;i++){
-                    inMatrix[rows][i]=0;
-                }
-            }
-        }
-
         //spiral array
         int spiral[][] = new int[rows][cols];
         //one dimentional array
@@ -35,17 +21,6 @@ public class MatrixHelixMorph {
 
         //convert inMatrix to one dimensional array
         array1D = convert(inMatrix,rows,cols);
-
-        //for matrixes with more than one length difference
-        if (Math.abs(rows - cols) > 1) {
-            if (rows > cols) {
-                rows--;
-
-            } else {
-                cols--;
-            }//end if
-        }//end if
-
 
         //call method to convert one dimensional array to an spiral matrix
         ToSpiral(rows, cols, array1D, spiral);
