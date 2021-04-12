@@ -12,12 +12,26 @@ public class MatrixHelixMorph {
     public static int[][] helix( int[][] inMatrix) {
 
         int rows = inMatrix.length;
-        int cols = inMatrix[0].length;
+        int cols = 0;
+
+        // check if all rows in matrix have same length
+        if (rows > 0) {
+            cols = inMatrix[0].length;
+
+            for (int i = 1; i < inMatrix.length; i++) {
+                if (cols != inMatrix[i].length) {
+                    return null;
+                }
+            }
+        }
 
         //spiral array
         int spiral[][] = new int[rows][cols];
         //one dimentional array
         int array1D[]=new int[rows * cols] ;
+
+        if (inMatrix == null || inMatrix.length == 0)
+            return null;
 
         //convert inMatrix to one dimensional array
         array1D = convert(inMatrix,rows,cols);
@@ -82,19 +96,5 @@ public class MatrixHelixMorph {
         }
         return array1D;
     }
-//
-//    static boolean isEqual(int[][]m1,int[][] m2)
-//    {
-//        boolean flag=true;
-//        for (int i = 0; i < m1.length; i++) {
-//            for (int j = 0; j < m1[0].length; j++) {
-//                System.out.println(m1[i][j]+" "+m2[i][j]);
-//                if (m1[i][j] != m2[i][j]) {
-//                    flag=false;
-////                    break;
-//                }
-//            }
-//        }
-//        return flag;
-//    }
+
 }
