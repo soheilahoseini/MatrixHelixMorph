@@ -13,6 +13,21 @@ public class MatrixHelixMorph {
 
         int rows = inMatrix.length;
         int cols = inMatrix[0].length;
+
+        if(Math.abs(rows-cols)>1){
+            if(rows>cols){
+                cols++;
+                for(int i=0;i<rows;i++){
+                    inMatrix[cols][i]=0;
+                }
+            }else {
+                rows++;
+                for(int i=0;i<cols;i++){
+                    inMatrix[rows][i]=0;
+                }
+            }
+        }
+
         //spiral array
         int spiral[][] = new int[rows][cols];
         //one dimentional array
